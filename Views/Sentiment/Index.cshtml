@@ -1,0 +1,35 @@
+@model EvaluadorInteligente.Models.SentimentInput
+
+@{
+    ViewData["Title"] = "Análisis de Sentimiento";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-primary">Análisis de Sentimiento</h2>
+                    <form asp-action="Index" method="post" class="mt-4">
+                        <div class="mb-3">
+                            <label asp-for="Text" class="form-label fw-semibold">Escribe tu opinión:</label>
+                            <textarea asp-for="Text" class="form-control" rows="4" placeholder="Ej: Me encantó este producto, lo recomiendo totalmente."></textarea>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Analizar</button>
+                        </div>
+                    </form>
+
+                    @if (Model?.Prediction != null)
+                    {
+                        <div class="alert alert-info mt-4" role="alert">
+                            <h5 class="mb-2">Resultado:</h5>
+                            <p><strong>@Model.Prediction</strong></p>
+                            <p>Score de confianza: <strong>@Model.Score</strong></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
