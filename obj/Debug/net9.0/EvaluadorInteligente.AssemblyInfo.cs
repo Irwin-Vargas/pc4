@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EvaluadorInteligente")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ddaf5d61ec2c9443dfdd76c6bac0050400416cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed2ae54b12f87b3e5c7d034548293f9a80c0c34c")]
 [assembly: System.Reflection.AssemblyProductAttribute("EvaluadorInteligente")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EvaluadorInteligente")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
