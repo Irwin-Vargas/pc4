@@ -1,0 +1,40 @@
+@model EvaluadorInteligente.Models.RecommendationInput
+
+@{
+    ViewData["Title"] = "Recomendador de Productos";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="text-center text-primary">Recomendador de Productos</h2>
+
+                    <form asp-action="Index" method="post" class="mt-4">
+                        <div class="mb-3">
+                            <label asp-for="UserId" class="form-label fw-semibold">Ingrese su UserId:</label>
+                            <input asp-for="UserId" class="form-control" placeholder="Ej: U1" />
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success">Recomendar</button>
+                        </div>
+                    </form>
+
+                    @if (Model?.RecommendedProducts != null)
+                    {
+                        <div class="alert alert-info mt-4">
+                            <h5 class="mb-3">Productos recomendados para <strong>@Model.UserId</strong>:</h5>
+                            <ul>
+                                @foreach (var product in Model.RecommendedProducts)
+                                {
+                                    <li>@product</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

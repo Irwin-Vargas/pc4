@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DbySyAWb058=",
+  "dgSpecHash": "Bg6pnT67p8g=",
   "success": true,
   "projectFilePath": "D:\\Universidad\\Semestre 6\\Programacion 1\\PC4\\EvaluadorInteligente\\EvaluadorInteligente.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vilca\\.nuget\\packages\\microsoft.ml\\4.0.2\\microsoft.ml.4.0.2.nupkg.sha512",
     "C:\\Users\\vilca\\.nuget\\packages\\microsoft.ml.cpumath\\4.0.2\\microsoft.ml.cpumath.4.0.2.nupkg.sha512",
     "C:\\Users\\vilca\\.nuget\\packages\\microsoft.ml.dataview\\4.0.2\\microsoft.ml.dataview.4.0.2.nupkg.sha512",
+    "C:\\Users\\vilca\\.nuget\\packages\\microsoft.ml.recommender\\0.22.2\\microsoft.ml.recommender.0.22.2.nupkg.sha512",
     "C:\\Users\\vilca\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\vilca\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
     "C:\\Users\\vilca\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",

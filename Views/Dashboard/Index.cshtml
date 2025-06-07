@@ -1,0 +1,72 @@
+@model EvaluadorInteligente.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Panel Inteligente";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Análisis de Sentimiento -->
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h4 class="text-primary">Análisis de Sentimiento</h4>
+                    <form asp-action="Analyze" method="post">
+                        <div class="mb-3">
+                            <label asp-for="SentimentInput.Text" class="form-label">Escribe tu opinión:</label>
+                            <textarea asp-for="SentimentInput.Text" class="form-control" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Analizar</button>
+                    </form>
+
+                    @if (Model.SentimentInput.Prediction != null)
+                    {
+                        var isPositive = Model.SentimentInput.Prediction == "Positivo";
+                        var alertClass = isPositive ? "alert-success" : "alert-danger";
+
+                        <div class="alert @alertClass mt-3">
+                            <p><strong>Resultado:</strong> @Model.SentimentInput.Prediction</p>
+                            <p><strong>Score:</strong> @Model.SentimentInput.Score</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Recomendación -->
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h4 class="text-success">Recomendación de Productos</h4>
+                    <form asp-action="Recommend" method="post">
+                        <div class="mb-3">
+                            <label asp-for="RecommendationInput.UserId" class="form-label">User ID:</label>
+                            <input asp-for="RecommendationInput.UserId" class="form-control" placeholder="Ej: U3" />
+
+                            @if (ViewData.ModelState.ContainsKey("Recommendation"))
+                            {
+                                <div class="text-danger mt-1">
+                                    @ViewData.ModelState["Recommendation"]?.Errors.FirstOrDefault()?.ErrorMessage
+                                </div>
+                            }
+                        </div>
+                        <button type="submit" class="btn btn-success">Recomendar</button>
+                    </form>
+
+                    @if (Model.RecommendationInput.RecommendedProducts != null && Model.RecommendationInput.RecommendedProducts.Any())
+                    {
+                        <div class="alert alert-success mt-3">
+                            <h6>Productos recomendados:</h6>
+                            <ul>
+                                @foreach (var prod in Model.RecommendationInput.RecommendedProducts)
+                                {
+                                    <li>@prod</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
