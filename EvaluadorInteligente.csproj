@@ -11,4 +11,14 @@
     <PackageReference Include="Microsoft.ML.Recommender" Version="0.22.2" />
   </ItemGroup>
 
+  <!-- Copiar archivos de datos al directorio de salida -->
+  <ItemGroup>
+    <None Update="Data\sentiment-data.tsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\ratings-data.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

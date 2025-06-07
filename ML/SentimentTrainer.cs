@@ -23,8 +23,8 @@ namespace EvaluadorInteligente.ML
 
     public class SentimentTrainer
     {
-        private readonly string dataPath = "Data/sentiment-data.tsv";
-        private readonly string modelPath = "ML/Models/sentiment-model.zip";
+        private readonly string dataPath = Path.Combine(AppContext.BaseDirectory, "Data", "sentiment-data.tsv");
+        private readonly string modelPath = Path.Combine(AppContext.BaseDirectory, "ML", "Models", "sentiment-model.zip");
         private readonly MLContext mlContext;
         private PredictionEngine<SentimentData, SentimentPrediction> predictionEngine;
 
@@ -45,6 +45,14 @@ namespace EvaluadorInteligente.ML
 
         public void TrainModel()
         {
+            if (!File.Exists(dataPath))
+                throw new FileNotFoundException($"El archivo de entrenamiento no se encontró en: {dataPath}");
+
+            // Crear carpeta para guardar el modelo si no existe
+            var modelDirectory = Path.GetDirectoryName(modelPath);
+            if (!Directory.Exists(modelDirectory))
+                Directory.CreateDirectory(modelDirectory!);
+
             var data = mlContext.Data.LoadFromTextFile<SentimentData>(dataPath, hasHeader: true);
             var pipeline = mlContext.Transforms.Text.FeaturizeText("Features", nameof(SentimentData.Text))
                 .Append(mlContext.BinaryClassification.Trainers.SdcaLogisticRegression());

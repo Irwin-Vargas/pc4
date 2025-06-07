@@ -136,3 +136,5 @@ D:\Universidad\Semestre 6\Programacion 1\PC4\EvaluadorInteligente\bin\Debug\net9
 D:\Universidad\Semestre 6\Programacion 1\PC4\EvaluadorInteligente\bin\Debug\net9.0\runtimes\win-arm64\native\MatrixFactorizationNative.dll
 D:\Universidad\Semestre 6\Programacion 1\PC4\EvaluadorInteligente\bin\Debug\net9.0\runtimes\win-x64\native\MatrixFactorizationNative.dll
 D:\Universidad\Semestre 6\Programacion 1\PC4\EvaluadorInteligente\bin\Debug\net9.0\runtimes\win-x86\native\MatrixFactorizationNative.dll
+D:\Universidad\Semestre 6\Programacion 1\PC4\EvaluadorInteligente\bin\Debug\net9.0\Data\ratings-data.csv
+D:\Universidad\Semestre 6\Programacion 1\PC4\EvaluadorInteligente\bin\Debug\net9.0\Data\sentiment-data.tsv
